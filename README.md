@@ -55,10 +55,13 @@ $ poetry shell
 
 Executando o programa
 
+### API FastAPI
+
 ```bash
-beerlog
-# ou
-python -m beerlog
+uvicorn beerlog.api:api --reload
 ```
 
-Se apareceu `Hello from beerlog` então está tudo certo.
+### Via browser
+
+Acessar os links `http://127.0.0.1:8000/docs`, `http://127.0.0.1:8000/redoc` e
+`http://127.0.0.1:8000/beers`
