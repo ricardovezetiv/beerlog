@@ -27,16 +27,16 @@ jobs:
       - name: Install Project
         run: poetry install
       
-      - name: Look for style errors
+      - name: Look for Style Errors
         run: poetry run flake8 beerlog
       
-      - name: Look for auto format errors
+      - name: Look for Auto Format Errors
         run: poetry run black -l 79 --check --diff beerlog tests
       
-      - name: Run tests
+      - name: Run Tests
         run: poetry run pytest -v --junitxml=test-result.xml
       
-      - name: publish junit results
+      - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
